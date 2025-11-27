@@ -1,17 +1,17 @@
-fetch("components/nav&footer/nav.html")
+fetch("/components/nav&footer/nav.html")
 .then(res => res.text())
 .then(data => {
     document.getElementById("nav").innerHTML = data;
 });
 
-fetch("components/nav&footer/footer.html")
+fetch("/components/nav&footer/footer.html")
 .then(res => res.text())
 .then(data => {
     document.getElementById("footer").innerHTML = data;
 });
 showHomeNav();
 function showShopNav() {
-    fetch("components/shop/shop.html")
+    fetch("/components/shop/shop.html")
     .then(res => res.text())
     .then(data => {
     document.getElementById("root").innerHTML = data;
@@ -19,7 +19,7 @@ function showShopNav() {
 }
 
 function showHomeNav(){
-    fetch("components/home/home.html")
+    fetch("/components/home/home.html")
     .then(res => res.text())
     .then(data => {
     document.getElementById("root").innerHTML = data;
@@ -27,7 +27,7 @@ function showHomeNav(){
 }
 
 function showAboutNav(){
-    fetch("components/about/about.html")
+    fetch("/components/about/about.html")
     .then(res => res.text())
     .then(data => {
     document.getElementById("root").innerHTML = data;
@@ -35,7 +35,7 @@ function showAboutNav(){
 }
 
 function showloginNav(){
-    fetch("components/login/login.html")
+    fetch("/components/login/login.html")
     .then(res => res.text())
     .then(data => {
     document.getElementById("root").innerHTML = data;
@@ -43,8 +43,12 @@ function showloginNav(){
 }
 
 function showContactNav(){
-    fetch("components/contact/contact.html")
+    fetch("/components/contact/contact.html")
     .then(res => res.text())
     .then(data => {
     document.getElementById("root").innerHTML = data;
-    });
+    })
+    .catch(err => console.error(err));
+}
+
+// Optional: add other show*_Nav functions below if needed
