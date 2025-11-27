@@ -41,3 +41,10 @@ function showloginNav(){
     document.getElementById("root").innerHTML = data;
     });
 }
+
+function showContactNav(){
+    fetch("components/contact/contact.html")
+    .then(res => res.text())
+    .then(data => {
+    document.getElementById("root").innerHTML = data;
+    });
